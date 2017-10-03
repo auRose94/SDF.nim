@@ -54,8 +54,8 @@ proc coverageToDistanceField*(
      width, height, stride: int): seq[uint8] =
     result = newSeq[uint8](width * height)
     # newSeq makes the buffer blank with 0's
-    for y in 1..height-1:
-        for x in 1..width-1:
+    for y in 1..height-2:
+        for x in 1..width-2:
             var k = x + y * stride
             var d, gx, gy, glen, a, a1: Float
             if img[k] == 255:
